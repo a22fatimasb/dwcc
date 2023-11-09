@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio String con JavaScript</title>
+    
+</head>
+<body>
+    
+    <h3>Traballar co nome e apelidos:</h3>
+
+    <button onclick="solicitarNomeCompletoAUsuario()">Solicitar Nome Completo</button>
+    <p id="resultadoNome"></p>
+    <h3>Traballar co contrasinal:</h3>
+    <button onclick="solicitarContrasinalAUsuario()">Solicitar Contrasinal</button>
+    <p id="resultadoContrasinal"></p>
+   
+
+    <script src="utilidades.js"></script>
+    <script>
+        let nomeCompleto = document.getElementById("resultadoNome").innerText;
+        let tamañoNomeCompletoConEspacios = determinarTamañoCadeaConEspacios(nomeCompleto);
+        let tamañoNomeCompletoSenEspacios = determinarTamañoCadeaSenEspacios(nomeCompleto);
+        let nomeCompletoMaiusculas = convertirCadeaAMaiusculas(nomeCompleto);
+        let nomeCompletoMinusculas = convertirCadeaAMinusculas(nomeCompleto);
+        let cadeaNome = separarCadea(nomeCadea);
+        let propostaNome =  devolverPorpostaNome(nomeCadea);
+
+        let contrasinalProvisional = document.getElementById("resultadoContrasinal").innerText;
+        if(validarQueTeñaCaracterEspecial(contrasinalProvisional)&&(contrasinalProvisional) && validarQueTeñaAlgunhaMaiuscula(contrasinalProvisional) && validarQueTeñaAlgunhaMinuscula(contrasinalProvisional) && validarQueTeñaAlgunNumero(contrasinalProvisional)){
+            let contrasinalDefinitivo = contrasinalProvisional;
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+

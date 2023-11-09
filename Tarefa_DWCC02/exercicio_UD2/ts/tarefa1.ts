@@ -60,7 +60,7 @@ Para gardar un valor do usuario utilizamos o seguinte comando: prompt
 Faino con if/else e con switch/case tamén
 */
 
-let idade: number = parseInt( window.prompt("Cal é a tua idade"));
+let idade: number = parseInt(window.prompt("Cal é a tua idade"));
 
 // Con switch/case
 if(!isNaN(idade)){
