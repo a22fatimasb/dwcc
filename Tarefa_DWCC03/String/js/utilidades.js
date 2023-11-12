@@ -1,7 +1,6 @@
 //Función que solicita ao usuario o seu nome e apelidos nunha única petición emprgando prompt
 function solicitarNomeCompletoAUsuario(){
     let nomeCompleto = prompt("Introduce o ter nome e apelidos");
-    //let nomeCompleto = document.getElementById("resultadoNome").innerText;
     console.log("O nome proporcionado polo usuarios: " , nomeCompleto);
     let tamanoNomeCompletoConEspacios = determinartamanoCadeaConEspacios(nomeCompleto);
     console.log("O tamaño do nome completo con espacios é de: ", tamanoNomeCompletoConEspacios);
