@@ -1,15 +1,15 @@
 // Amosar o número de días que quedan dende hoxe (día actual) ata final de curso (por exemplo, o 25 de Xuño).
 function diasRestantesParaFinDeCurso(){
-    // Obtenemos la fecha actual
+    // Obtenemos a data actual
     const fechaActual = new Date();
-    // Establecemos la fecha de final de curso
+    // Establecemos a data de fi de curso
     const fechaFinalDeCurso = new Date("2024/7/25");
 
-    // Calculamos la diferencia en días
-    const unDiaEnMilisegundos = 24 * 60 * 60 * 1000; // 1 día en milisegundos
-    const diasRestantes = Math.round((fechaFinalDeCurso - fechaActual) / unDiaEnMilisegundos);
+    // Calculamos a diferenza en días
+    const diaMilesengundos = 24 * 60 * 60 * 1000; // 1 día en milisegundos
+    const diasRestantes = Math.round((fechaFinalDeCurso - fechaActual) / diaMilesengundos);
 
-    // Mostramos el resultado
+    // Amosamos o resultado
     console.log(`Quedan ${diasRestantes} días hasta el final del curso.`);
 }
 

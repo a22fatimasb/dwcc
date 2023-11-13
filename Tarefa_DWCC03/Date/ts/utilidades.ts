@@ -1,16 +1,16 @@
 // Amosar o número de días que quedan dende hoxe (día actual) ata final de curso (por exemplo, o 25 de Xuño).
 function diasRestantesParaFinDeCurso(): void {
-    // Obtenemos la fecha actual
+    // Obtenemos a data actual
     const fechaActual: Date = new Date();
     // Establecemos la fecha de final de curso
     const fechaFinalDeCurso: Date = new Date("2024/7/25");
 
-    // Calculamos la diferencia en días
-    const unDiaEnMilisegundos: number = 24 * 60 * 60 * 1000; // 1 día en milisegundos
-    const diasRestantes: number = Math.round((fechaFinalDeCurso.getTime() - fechaActual.getTime()) / unDiaEnMilisegundos);
+    // Calculamos a diferenza en días
+    const diaMilisegundos: number = 24 * 60 * 60 * 1000; // 1 día en milisegundos
+    const diasRestantes: number = Math.round((fechaFinalDeCurso.getTime() - fechaActual.getTime()) / diaMilisegundos);
 
-    // Mostramos el resultado
-    console.log(`Quedan ${diasRestantes} días hasta el final del curso.`);
+    // Amosamos o resultado
+    console.log(`Queda un total de ${diasRestantes} días ata o final do curso.`);
 }
 
 
@@ -50,8 +50,7 @@ function calcularFinsDeSemanaAniversario(){
         // Incrementamos o ano do aniversario
         anoAniversario++;
     } while (anoAniversario <= 2100);
-   
-        
+          
     
 
     // Amosamos a cantidade total de fins de semana
@@ -73,6 +72,7 @@ function amosarDataEnFormato(): void{
     // Obtemos a data actual
     const dataActual: Date = new Date();
 
+    // Establecemos o nome dos meses e dos días da semana
     const MESES: string[]  = [
         "Xaneiro", "Febreiro", "Marzo", "Abril", "Maio", "Xuño", "Xullo",
         "Agosto", "Setembro", "Outubro", "Novembro", "Decembro",
@@ -114,10 +114,9 @@ function amosarDataEnFormato(): void{
             console.error("Formato non válido. Introduce un número de 1 a 3.");
 }}
 
-/* 
- Amosa a hora actual en diferentes formatos segundo o valor que meta o
-usuario por parámetro (usa un switch): 
-*/
+
+ // Amosa a hora actual en diferentes formatos segundo o valor que meta o usuario por parámetro (usa un switch): 
+
 
 function amosarHoraEnFormato(){
     const formato: string | null = prompt("Introduce un número de formato (1 ou 2):");
@@ -125,9 +124,9 @@ function amosarHoraEnFormato(){
         return;
     }
     const formatoUsuario: number = parseInt(formato);
+
     // Obtemos a data actual
     const dataActual: Date = new Date();
-
     
     const horaActual: number = dataActual.getHours();
     const minutosActuais: number = dataActual.getMinutes();
