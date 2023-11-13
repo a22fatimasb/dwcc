@@ -40,7 +40,8 @@ function calcularFinsDeSemanaAniversario(){
         // Comprobamos se o día do aniversario cae en fin de semana (0 é domingo, 6 é sábado)
         const diaSemanaAniversario = dataAniversarioEsteAno.getDay();
         if (diaSemanaAniversario === 0 || diaSemanaAniversario === 6) {
-            console.log(`O teu aniversario en ${anoActual} cae en fin de semana!`);
+            console.log(`O teu aniversario en ${anoAniversario} cae en fin de semana!`);
+
             cantidadeFinsDeSemana++;
         }
 
@@ -61,7 +62,7 @@ usuario por parámetro (usa un switch):
 */
 
 function amosarDataEnFormato(){
-    const formatoUsuario = parseInt(prompt("Introduce un número de formato (1, 2) ou 3:"));
+    const formatoUsuario = parseInt(prompt("Introduce un número de formato (1, 2 ou 3):"));
     // Obtemos a data actual
     const dataActual = new Date();
 
@@ -114,22 +115,23 @@ usuario por parámetro (usa un switch):
 function amosarHoraEnFormato(){
     const formatoUsuario = parseInt(prompt("Introduce un número de formato (1 ou 2):"));
     // Obtemos a data actual
-    const dataActual = new Date();
-
-    
+    const dataActual = new Date();  
     const horaActual = dataActual.getHours();
     const minutosActuais = dataActual.getMinutes();
     const segundosActuais = dataActual.getSeconds();
+    const minutosConCero = minutosActuais < 10 ? `0${minutosActuais}` : minutosActuais;
+    const segundosConCero = segundosActuais <10 ? `0${segundosActuais}`: segundosActuais;
 
     switch (formatoUsuario) {
         case 1:
             // 14:35:07 (hora detallada con minutos e segundos)
-            const formato1 = `${horaActual}:${minutosActuais}:${segundosActuais}`;
+            const formato1 = `${horaConCero}:${minutosConCero}:${segundosConCero}`;
             console.log(formato1);
             break;
         case 2:
             // 02:35 PM ou 02:35 AM (hora con minutos e AM ou PM segundo sexa antes ou despois de mediodía).
-            const formato2 = `${(horaActual % 12) || 12}:${minutosActuais} ${horaActual < 12 ? 'AM' : 'PM'}`;
+
+            const formato2 = `0${(horaActual % 12) || 12}:${minutosConCero} ${horaActual < 12 ? 'AM' : 'PM'}`;
             console.log(formato2);
             break;
       

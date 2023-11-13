@@ -43,7 +43,7 @@ function calcularFinsDeSemanaAniversario(){
         // Comprobamos se o día do aniversario cae en fin de semana (0 é domingo, 6 é sábado)
         const diaSemanaAniversario: number = dataAniversarioEsteAno.getDay();
         if (diaSemanaAniversario === 0 || diaSemanaAniversario === 6) {
-            console.log(`O teu aniversario en ${anoActual} cae en fin de semana!`);
+            console.log(`O teu aniversario en ${anoAniversario} cae en fin de semana!`);
             cantidadeFinsDeSemana++;
         }
 
@@ -64,7 +64,7 @@ usuario por parámetro (usa un switch):
 */
 
 function amosarDataEnFormato(): void{
-    const formato: string | null = prompt("Introduce un número de formato (1, 2) ou 3:");
+    const formato: string | null = prompt("Introduce un número de formato (1, 2 ou 3):");
     if(formato === null){
         return;
     }
@@ -132,16 +132,19 @@ function amosarHoraEnFormato(){
     const horaActual: number = dataActual.getHours();
     const minutosActuais: number = dataActual.getMinutes();
     const segundosActuais: number = dataActual.getSeconds();
+    const minutosConCero: string |number = minutosActuais < 10 ? `0${minutosActuais}` : minutosActuais;
+    const segundosConCero: string |number = segundosActuais <10 ? `0${segundosActuais}`: segundosActuais;
+    
 
     switch (formatoUsuario) {
         case 1:
             // 14:35:07 (hora detallada con minutos e segundos)
-            const formato1: string = `${horaActual}:${minutosActuais}:${segundosActuais}`;
+            const formato1: string = `${horaActual}:${minutosConCero}:${segundosConCero}`;
             console.log(formato1);
             break;
         case 2:
             // 02:35 PM ou 02:35 AM (hora con minutos e AM ou PM segundo sexa antes ou despois de mediodía).
-            const formato2: string = `${(horaActual % 12) || 12}:${minutosActuais} ${horaActual < 12 ? 'AM' : 'PM'}`;
+            const formato2: string = `0${(horaActual % 12) || 12}:${minutosConCero} ${horaActual < 12 ? 'AM' : 'PM'}`;
             console.log(formato2);
             break;
       
