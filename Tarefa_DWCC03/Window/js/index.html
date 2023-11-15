@@ -16,12 +16,12 @@
       // Declaramos a variable ventaSecundaria
       let ventaSecundaria;
 
-      // Pide permiso ao usuario e, só se acepta, abre a nova ventá.
+      // Pedimos permiso para abrir unha nova ventá.
       function pedirPermisoAoUsuario() {
         const permisoUsuario = prompt(
           "¿Acepta que se abra unha xanela nova? Pulse 's' para si e 'n' para non."
         );
-
+        // Verificamos que o usuario dou permiso
         if (permisoUsuario === "s") {
           abrirVentaSecundaria();
         } else {
@@ -32,7 +32,7 @@
       // Función para desprazar xanela secundaria
       function desprazarVentaSecundaria() {
         if (ventaSecundaria && !ventaSecundaria.closed) {
-          // Utiliza os métodos moveBy e moveTo
+          // Utilizamos o método moveBy
           ventaSecundaria.moveBy(50, 50);
           // Asegura que a ventá secundaria quede visible despois de cada operación
           ventaSecundaria.focus();

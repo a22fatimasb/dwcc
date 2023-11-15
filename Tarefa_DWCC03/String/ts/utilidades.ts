@@ -1,7 +1,6 @@
 //Función que solicita ao usuario o seu nome e apelidos nunha única petición emprgando prompt
 function solicitarNomeCompletoAUsuario(): void{
     let nomeCompleto: string | null  = prompt("Introduce o ter nome e apelidos");
-    //let nomeCompleto = document.getElementById("resultadoNome").innerText;
     console.log("O nome proporcionado polo usuarios: " , nomeCompleto);
     let tamanoNomeCompletoConEspacios: number = determinartamanoCadeaConEspacios(nomeCompleto);
     console.log("O tamaño do nome completo con espacios é de: ", tamanoNomeCompletoConEspacios);
@@ -83,8 +82,8 @@ function devolverPorpostaNome(cadea: string | null): string {
     let apelido2: string = arrayNome[2];
 
     let nomeProposta: string = convertirCadeaAMinusculas(nome);
-    let letraApelido1: string = convertirCadeaAMaiusculas(apelido1.charAt(0)); // Obtén a primeira letra do primeiro apelido
-    let letraApelido2: string = convertirCadeaAMaiusculas(apelido2.charAt(0)); // Obtén a primeira letra do segundo apelido
+    let letraApelido1: string = convertirCadeaAMaiusculas(apelido1.charAt(0)); // Collemos a primeira letra do primeiro apelido
+    let letraApelido2: string = convertirCadeaAMaiusculas(apelido2.charAt(0)); // Collemos a primeira letra do segundo apelido
 
     let resultado: string = nomeProposta + letraApelido1 + letraApelido2;
     return resultado;
@@ -96,7 +95,7 @@ function solicitarContrasinalAUsuario(): void {
     let contrasinalProvisional: string | null = prompt("Introduce unha contrasinal");
     let contrasinalDefinitivo: string  = "";
     
-    if(validarQueTenaCaracterEspecial(contrasinalProvisional)&&(contrasinalProvisional) && validarQueTenaAlgunhaMaiuscula(contrasinalProvisional) && validarQueTenaAlgunhaMinuscula(contrasinalProvisional) && validarQueTenaAlgunNumero(contrasinalProvisional)){
+    if(validarQueTenaCaracterEspecial(contrasinalProvisional)&& validartamanoContrasinal(contrasinalProvisional) && validarQueTenaAlgunhaMaiuscula(contrasinalProvisional) && validarQueTenaAlgunhaMinuscula(contrasinalProvisional) && validarQueTenaAlgunNumero(contrasinalProvisional)){
          contrasinalDefinitivo = contrasinalProvisional;
          console.log("O contrasinal ingresado é:",contrasinalDefinitivo);
      } else{

@@ -30,6 +30,7 @@ function determinartamanoCadeaSenEspacios(cadea){
     if (!cadea || !eString(cadea)) {
         return 0; 
     }
+    //Eliminamos todo tipo de espazos que haxa no string
     let nomeCompletoSenEspazos = cadea.split(" ").join("");
     return nomeCompletoSenEspazos.length;
 }
@@ -71,6 +72,7 @@ function eString(cadea) {
  Unha proposta de nome de usuario co nome en minúsculas, a incial do
 primeiro apelido en maiúsculas e a inicial do segundo apelido tamén en
 maiúsculas. Por exemplo, para Gerardo Otero Rodriguez: gerardoOR*/
+
 function devolverPorpostaNome(cadea) {
     if (!cadea || !eString(cadea)) {
         return 0;
@@ -82,8 +84,8 @@ function devolverPorpostaNome(cadea) {
     let apelido2 = arrayNome[2];
 
     let nomeProposta = convertirCadeaAMinusculas(nome);
-    let letraApelido1 = convertirCadeaAMaiusculas(apelido1.charAt(0)); // Obtén a primeira letra do primeiro apelido
-    let letraApelido2 = convertirCadeaAMaiusculas(apelido2.charAt(0)); // Obtén a primeira letra do segundo apelido
+    let letraApelido1 = convertirCadeaAMaiusculas(apelido1.charAt(0)); // Collemos a primeira letra do primeiro apelido
+    let letraApelido2 = convertirCadeaAMaiusculas(apelido2.charAt(0)); // Collemos a primeira letra do segundo apelido
 
     let resultado = nomeProposta + letraApelido1 + letraApelido2;
     return resultado;
@@ -95,7 +97,7 @@ function solicitarContrasinalAUsuario(){
     let contrasinalProvisional = prompt("Introduce unha contrasinal");
     let contrasinalDefinitivo = "";
     
-    if(validarQueTenaCaracterEspecial(contrasinalProvisional)&&(contrasinalProvisional) && validarQueTenaAlgunhaMaiuscula(contrasinalProvisional) && validarQueTenaAlgunhaMinuscula(contrasinalProvisional) && validarQueTenaAlgunNumero(contrasinalProvisional)){
+    if(validarQueTenaCaracterEspecial(contrasinalProvisional)&&validartamanoContrasinal(contrasinalProvisional) && validarQueTenaAlgunhaMaiuscula(contrasinalProvisional) && validarQueTenaAlgunhaMinuscula(contrasinalProvisional) && validarQueTenaAlgunNumero(contrasinalProvisional)){
          contrasinalDefinitivo = contrasinalProvisional;
          console.log("O contrasinal ingresado é:",contrasinalDefinitivo);
      } else{
