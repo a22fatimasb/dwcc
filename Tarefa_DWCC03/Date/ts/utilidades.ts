@@ -117,7 +117,7 @@ function amosarDataEnFormato(): void{
  // Función que amosa a hora actual en diferentes formatos segundo o valor que meta o usuario por parámetro 
 
 
-function amosarHoraEnFormato(){
+function amosarHoraEnFormato(): void{
     const formato: string | null = prompt("Introduce un número de formato (1 ou 2):");
     if(formato === null){
         return;

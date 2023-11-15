@@ -130,7 +130,7 @@ function amosarHoraEnFormato(){
     switch (formatoUsuario) {
         case 1:
             // Formato 1: 14:35:07 (hora detallada con minutos e segundos)
-            const formato1 = `${horaConCero}:${minutosConCero}:${segundosConCero}`;
+            const formato1 = `${horaActual}:${minutosConCero}:${segundosConCero}`;
             console.log(formato1);
             break;
         case 2:
