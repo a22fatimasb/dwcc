@@ -145,12 +145,13 @@ function amosarElementosEntrePosicions(paisesEuropeos: string[]): void {
     const posicionInicio: string | null = prompt("Indica a posición de inicio: ");
     const posicionFin: string | null = prompt("Indica a posición de fin: ");
     if (posicionFin && posicionInicio) {
-        const inicio: number = parseInt(posicionInicio) - 1;
-        const fin: number = parseInt(posicionFin) - 1;
+        const inicio: number = parseInt(posicionInicio);
+        const fin: number = parseInt(posicionFin);
 
         if (inicio > 0 && fin <= paisesEuropeos.length && inicio <= fin) {
+
             const paisesEuropeosCopia: string[] = paisesEuropeos.slice();
-            const paisesSeleccionados: string[] = paisesEuropeosCopia.slice(inicio, fin);
+            const paisesSeleccionados: string[] = paisesEuropeosCopia.slice(inicio-1, fin-1);
             console.log(`Os países entre as posicións ${inicio} e ${fin} son:`);
             paisesSeleccionados.forEach((pais: string) => console.log(pais));
         } else {
