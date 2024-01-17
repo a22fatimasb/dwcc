@@ -66,6 +66,10 @@ discos.push(disco2);
 discos.push(disco3);
 discos.push(disco4);
 
+console.log("Amosar toda a información dun disco:")
+console.log(disco2.amosar_informacion());
+
+console.log("Amosar toda a información de todos os discos:")
 discos.forEach((disco) => {
   console.log(disco.amosar_informacion());
 });
