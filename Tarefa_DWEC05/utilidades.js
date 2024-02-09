@@ -91,7 +91,7 @@ function validarFormulario() {
   if (!validarCadeaTexto(nome)) {
     mostrarErrores("O nome introducido debe ser unha cadea de texto.");
     document.getElementById("nombre").classList.add("error");
-    document.getElementById("nombre").focus();
+    //document.getElementById("nombre").focus();
     return false;
   }
 
@@ -100,7 +100,7 @@ function validarFormulario() {
   if (!validarCadeaTexto(apelidos)) {
     mostrarErrores("Os apelidos introducidos deben ser unha cadea de texto.");
     document.getElementById("apellidos").classList.add("error");
-    document.getElementById("apellidos").focus();
+    //document.getElementById("apellidos").focus();
     return false;
   }
 
@@ -109,7 +109,7 @@ function validarFormulario() {
   if (!validarIdade(idade)) {
     mostrarErrores("A idade debe estar comprendida entre 0 y 105 años.");
     document.getElementById("edad").classList.add("error");
-    document.getElementById("edad").focus();
+    //document.getElementById("edad").focus();
     return false;
   }
 
@@ -118,7 +118,7 @@ function validarFormulario() {
   if (!validarDNI(nif)) {
     mostrarErrores("O NIF introducido non é válido.");
     document.getElementById("nif").classList.add("error");
-    document.getElementById("nif");
+    //document.getElementById("nif");
     return false;
   }
 
@@ -127,7 +127,7 @@ function validarFormulario() {
   if (!validarEmail(email)) {
     mostrarErrores("O correo electrónico introducido non é válido.");
     document.getElementById("email").classList.add("error");
-    document.getElementById("email").focus();
+    //document.getElementById("email").focus();
     return false;
   }
 
@@ -136,7 +136,7 @@ function validarFormulario() {
   if (provincia === "0") {
     mostrarErrores("Debe seleccionar unha provincia.");
     document.getElementById("provincia").classList.add("error");
-    document.getElementById("provincia").focus();
+    //document.getElementById("provincia").focus();
     return false;
   }
 
@@ -145,7 +145,7 @@ function validarFormulario() {
   if (!validarData(data)) {
     mostrarErrores("A data debe ter o formato dd/mm/aaaa ou dd-mm-aaaa.");
     document.getElementById("fecha").classList.add("error");
-    document.getElementById("fecha").focus();
+    //document.getElementById("fecha").focus();
     return false;
   }
 
@@ -154,7 +154,7 @@ function validarFormulario() {
   if (!validarTelefono(telefono)) {
     mostrarErrores("O número de teléfono introducido non é válido.");
     document.getElementById("telefono").classList.add("error");
-    document.getElementById("telefono").focus();
+   // document.getElementById("telefono").focus();
     return false;
   }
 
@@ -163,12 +163,12 @@ function validarFormulario() {
   if (!validarHora(hora)) {
     mostrarErrores("A hora debe ter o formato hh:mm.");
     document.getElementById("hora").classList.add("error");
-    document.getElementById("hora").focus();
+    //document.getElementById("hora").focus();
     return false;
   }
 
   // Si todas as validaciones pasan podese enviar o formulario
-  mostrarExito();
+
   return true;
   
 }
@@ -181,12 +181,6 @@ function mostrarErrores(mensaxe) {
   }
 }
 
-function mostrarExito(){
-  const mostrarExito = document.getElementById("exito");
-  if(mostrarExito){
-    mostrarExito.innerHTML = "Enviando a información introducida ..."
-  }
-}
 
 // Función para convertir a maiusculas ao perder o foco
 function convertirAMaiusculas(elemento) {
