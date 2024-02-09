@@ -89,7 +89,7 @@ function validarFormulario() {
   // Validar nome
   let nome = document.getElementById("nombre").value;
   if (!validarCadeaTexto(nome)) {
-    mostrarErrores("O nome introducido debe ser unha cadea de texto.");
+    mostrarErros("O nome introducido debe ser unha cadea de texto.");
     document.getElementById("nombre").classList.add("error");
     //document.getElementById("nombre").focus();
     return false;
@@ -98,7 +98,7 @@ function validarFormulario() {
   // Validar apelidos
   let apelidos = document.getElementById("apellidos").value;
   if (!validarCadeaTexto(apelidos)) {
-    mostrarErrores("Os apelidos introducidos deben ser unha cadea de texto.");
+    mostrarErros("Os apelidos introducidos deben ser unha cadea de texto.");
     document.getElementById("apellidos").classList.add("error");
     //document.getElementById("apellidos").focus();
     return false;
@@ -107,7 +107,7 @@ function validarFormulario() {
   // Validar idade
   let idade = parseInt(document.getElementById("edad").value);
   if (!validarIdade(idade)) {
-    mostrarErrores("A idade debe estar comprendida entre 0 y 105 años.");
+    mostrarErros("A idade debe estar comprendida entre 0 y 105 años.");
     document.getElementById("edad").classList.add("error");
     //document.getElementById("edad").focus();
     return false;
@@ -116,7 +116,7 @@ function validarFormulario() {
   // Validar NIF
   let nif = document.getElementById("nif").value;
   if (!validarDNI(nif)) {
-    mostrarErrores("O NIF introducido non é válido.");
+    mostrarErros("O NIF introducido non é válido.");
     document.getElementById("nif").classList.add("error");
     //document.getElementById("nif");
     return false;
@@ -125,7 +125,7 @@ function validarFormulario() {
   // Validar email
   let email = document.getElementById("email").value;
   if (!validarEmail(email)) {
-    mostrarErrores("O correo electrónico introducido non é válido.");
+    mostrarErros("O correo electrónico introducido non é válido.");
     document.getElementById("email").classList.add("error");
     //document.getElementById("email").focus();
     return false;
@@ -134,7 +134,7 @@ function validarFormulario() {
   // Validar provincia seleccionada
   let provincia = document.getElementById("provincia").value;
   if (provincia === "0") {
-    mostrarErrores("Debe seleccionar unha provincia.");
+    mostrarErros("Debe seleccionar unha provincia.");
     document.getElementById("provincia").classList.add("error");
     //document.getElementById("provincia").focus();
     return false;
@@ -143,7 +143,7 @@ function validarFormulario() {
   // Validar data
   let data = document.getElementById("fecha").value;
   if (!validarData(data)) {
-    mostrarErrores("A data debe ter o formato dd/mm/aaaa ou dd-mm-aaaa.");
+    mostrarErros("A data debe ter o formato dd/mm/aaaa ou dd-mm-aaaa.");
     document.getElementById("fecha").classList.add("error");
     //document.getElementById("fecha").focus();
     return false;
@@ -152,7 +152,7 @@ function validarFormulario() {
   // Validar teléfono
   let telefono = document.getElementById("telefono").value;
   if (!validarTelefono(telefono)) {
-    mostrarErrores("O número de teléfono introducido non é válido.");
+    mostrarErros("O número de teléfono introducido non é válido.");
     document.getElementById("telefono").classList.add("error");
    // document.getElementById("telefono").focus();
     return false;
@@ -161,20 +161,20 @@ function validarFormulario() {
   // Validar hora
   let hora = document.getElementById("hora").value;
   if (!validarHora(hora)) {
-    mostrarErrores("A hora debe ter o formato hh:mm.");
+    mostrarErros("A hora debe ter o formato hh:mm.");
     document.getElementById("hora").classList.add("error");
     //document.getElementById("hora").focus();
     return false;
   }
 
-  // Si todas as validaciones pasan podese enviar o formulario
+  // Si todas as validacions pasan podese enviar o formulario
 
   return true;
   
 }
 
 // Función para mostrar mensaxes de erro
-function mostrarErrores(mensaxe) {
+function mostrarErros(mensaxe) {
   const errosElemento = document.getElementById("errores");
   if (errosElemento) {
     errosElemento.innerHTML = mensaxe;
