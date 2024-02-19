@@ -49,9 +49,11 @@ function getCookie(nome) {
   return "";
 }
 
-// Función para validar si unha cadea de texto conten só letras
+// Función para validar se unha cadea de texto contén só letras
 function validarCadeaTexto(cadea) {
   return /^[a-zA-ZáéíóúÁÉÍÓÚ]+$/.test(cadea);
+  /* Esta expresión regular indica que a cadea debe comezar (^) con unha serie de caracteres do alfabeto, tanto en minúsculas como en maiúsculas, incluíndo as vogais con til.
+  O (+) establece que debe aparecer polo menos unha vez. E finalmente, o ($) indica que a busca se realizará ata o final da cadea. */
 }
 
 // Función para validar a idade entre 0 e 105 años
@@ -62,27 +64,44 @@ function validarIdade(idade) {
 // Función para validar un NIF
 function validarDNI(nif) {
   return /^\d{8}[a-zA-Z]$/.test(nif);
+  // Expresión que indica que comeza (^) por 8 díxitos (do 0-9) e remata cunha letra, tanto en maiúsculas como en minúsculas.
 }
 
 // Función para validar un correo electrónico
 function validarEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  /* Expresión que comeza (^) por calquera caracter que non sexa un espazo en branco (\s) nin @, que pode aparecer unha ou máis veces, seguido do carácter @.
+    Despois, repetimos a mesma expresión: calquera caracter que non sexa un espazo en branco (\s) nin @, que pode aparecer unha ou máis veces.
+    Seguimos cun punto (.), que debe ser escapado (\.) para ser interpretado literalmente.
+    Por último, indicamos que a cadea debe rematar coa mesma pauta de calquera caracter que non sexa un espazo en branco (\s) ou @.*/
 }
 
-// Función para validar a data en formato dd/mm/aaaa o dd-mm-aaaa
+// Función para validar a data no formato dd/mm/aaaa ou dd-mm-aaaa
 function validarData(data) {
   return /^(0[1-9]|[12][0-9]|3[01])[-/](0[1-9]|1[0-2])[-/]\d{4}$/.test(data);
+    /* A expresión comeza (^) cun díxito que pode ser 0 seguido doutro díxito do 1 ao 9, ou ben comeza con 1 ou 2 seguido por un díxito do 0 ao 9. 
+    Tamén pode comezar con 30 ou 31.
+    Despois, debe haber un guión (-) ou unha barra (/) para ser válido.
+    A continuación, debe haber un 0 seguido por un díxito do 1 ao 9, ou pode ser un 1 seguido dun díxito do 0 ao 2.
+    Novamente, é necesaria un guión (-) ou unha barra (/) para ser válido. 
+    E por último, debe rematar con 4 díxitos (do 0 ao 9). */
 }
+
 
 // Función para validar un número de teléfono de 9 díxitos
 function validarTelefono(telefono) {
   return /^\d{9}$/.test(telefono);
+  // A expresión require que comece (^) e remate ($) cun total de 9 díxitos (\d) (do 0 ao 9).
 }
 
 // Función para validar o formato de hora hh:mm
 function validarHora(hora) {
   return /^([01]\d|2[0-3]):([0-5]\d)$/.test(hora);
+  /* A expresión indica que comece con 0 ou 1 seguido dun díxito (\d) (do 0 ao 9), ou pode comezar con 2 seguido dun díxito do 0 ao 3.
+  Logo, debe haber dospuntos (:).
+  E por último, debe acabar cun díxito do 0 ao 5 seguido de calquera díxito (\d) (do 0 ao 9). */
 }
+
 
 // Función para validar os campos do formulario antes de enviar
 function validarFormulario() {
@@ -154,7 +173,7 @@ function validarFormulario() {
   if (!validarTelefono(telefono)) {
     mostrarErros("O número de teléfono introducido non é válido.");
     document.getElementById("telefono").classList.add("error");
-   // document.getElementById("telefono").focus();
+    // document.getElementById("telefono").focus();
     return false;
   }
 
@@ -170,7 +189,6 @@ function validarFormulario() {
   // Si todas as validacions pasan podese enviar o formulario
 
   return true;
-  
 }
 
 // Función para mostrar mensaxes de erro
@@ -180,7 +198,6 @@ function mostrarErros(mensaxe) {
     errosElemento.innerHTML = mensaxe;
   }
 }
-
 
 // Función para convertir a maiusculas ao perder o foco
 function convertirAMaiusculas(elemento) {
@@ -203,14 +220,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Event listener para validar o formulario antes de enviar
-  document.getElementById("formulario").addEventListener("submit", function (event) {
-    // Cancelar o envío do formulario por defecto
-    event.preventDefault();
-    // Validar o formulario antes de enviar
-    if (validarFormulario()) {
-      // Si o formulario é válido, incrementar os intentos e enviar o formulario
-      incrementarIntentos();
-      this.submit(); // Enviar o formulario
-    }
-  });
+  document
+    .getElementById("formulario")
+    .addEventListener("submit", function (event) {
+      // Cancelar o envío do formulario por defecto
+      event.preventDefault();
+      // Validar o formulario antes de enviar
+      if (validarFormulario()) {
+        let confirmacion = confirm("Estás seguro de enviar o formulario?");
+        if (confirmacion) {
+          // Si o formulario é válido, incrementar os intentos e enviar o formulario
+          incrementarIntentos();
+          this.submit(); // Enviar o formulario
+        }
+      }
+    });
 });
