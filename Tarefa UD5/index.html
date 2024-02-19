@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>DWEC05 - Solución Tarea</title>
+  <script type="text/javascript" src="utilidades.js"></script>
+  <style type="text/css">
+    label {
+      width: 150px;
+      float: left;
+      margin-bottom: 5px;
+    }
+    input, select {
+      width: 150px;
+      float: left;
+      margin-bottom: 5px;
+    }
+    fieldset {
+      background: #66cccc;
+      width: 350px;
+      border: thick solid #306;
+    }
+    legend {
+      border-top-width: medium;
+      border-right-width: medium;
+      border-bottom-width: medium;
+      border-left-width: medium;
+      border-top-style: solid;
+      border-right-style: solid;
+      border-bottom-style: solid;
+      border-left-style: solid;
+      background-color: #fff;
+    }
+    #errores, #intentos, #mensajes {
+      float: left;
+      width: 325px;
+      margin-bottom: 10px;
+    }
+    #errores {
+      background: #ff6633;
+    }
+    #intentos {
+      background: #ccff33;
+    }
+    #mensajes {
+      background: #33ff33;
+    }
+    .error {
+      border: solid 2px #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>DWEC05 - Solución Tarea</legend>
+    <form name="formulario" id="formulario" action="index.html" method="get">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" />
+
+      <label for="apellidos">Apellidos:</label>
+      <input type="text" name="apellidos" id="apellidos" />
+
+      <label for="edad">Edad:</label>
+      <input type="text" name="edad" id="edad" maxlength="3" />
+
+      <label for="nif">NIF:</label>
+      <input type="text" name="nif" id="nif" />
+
+      <label for="email">E-mail:</label>
+      <input type="text" name="email" id="email" />
+
+      <label for="provincia">Provincia:</label>
+      <select name="provincia" id="provincia">
+        <option value="0" selected="selected">Seleccione Provincia</option>
+        <option value="C">A Coruña</option>
+        <option value="LU">Lugo</option>
+        <option value="OU">Ourense</option>
+        <option value="PO">Pontevedra</option>
+      </select>
+
+      <label for="contrasinal">Contraseña:</label>
+      <input type="password" name="contrasinal" id="contrasinal" />
+
+      <label for="fecha">Fecha Nacimiento:</label>
+      <input type="text" name="fecha" id="fecha" />
+
+      <label for="telefono">Teléfono:</label>
+      <input type="text" name="telefono" id="telefono" maxlength="9" />
+
+      <label>Vehículos que tienes:</label><br />
+      <input type="checkbox" id="bicicleta" name="vehiculos[]" value="Bicicleta" />
+      <label for="bicicleta">Bicicleta</label><br />
+      <input type="checkbox" id="coche" name="vehiculos[]" value="Coche" />
+      <label for="coche">Coche</label><br />
+      <input type="checkbox" id="moto" name="vehiculos[]" value="Moto" />
+      <label for="moto">Moto</label><br />
+
+      <label>Lenguaje de programación favorito:</label><br />
+      <input type="radio" id="java" name="lenguaje" value="Java" />
+      <label for="java">Java</label><br />
+      <input type="radio" id="python" name="lenguaje" value="Python" />
+      <label for="python">Python</label><br />
+      <input type="radio" id="javascript" name="lenguaje" value="JavaScript" />
+      <label for="javascript">JavaScript</label><br />
+
+      <br />
+
+      <input type="reset" name="limpiar" id="button" value="Limpiar" />
+      <input type="submit" name="enviar" id="enviar" value="Enviar" />
+      <input type="submit" name="borrarCookie" id="borrarCookie" value="Borrar cookie" onclick="removeCookie()" />
+    </form>
+    <div id="errores"></div>
+    
+  </fieldset>
+</body>
+</html>
+
