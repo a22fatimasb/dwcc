@@ -22,7 +22,11 @@ function getCookie(nome) {
 
 // Función para eleminar unha cookie
 function removeCookie(cnome) {
-  setCookie(cnome, "", -1);
+  if (getCookie(cnome)) {
+    setCookie(cnome, "", -1);
+    return true;
+  }
+  return false;
 }
 
 // Función que detecte unha cookie
@@ -204,7 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
           setCookie("nome", nome, 30);
           console.log("Cookie guardada para el usuario: " + nome);
         }
-        
       }
     });
 });
