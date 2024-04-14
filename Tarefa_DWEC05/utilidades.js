@@ -51,7 +51,7 @@ function getCookie(nome) {
 
 // Función para validar se unha cadea de texto contén só letras
 function validarCadeaTexto(cadea) {
-  return /^[a-zA-ZáéíóúÁÉÍÓÚ]+$/.test(cadea);
+  return /^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$/.test(cadea);
   /* Esta expresión regular indica que a cadea debe comezar (^) con unha serie de caracteres do alfabeto, tanto en minúsculas como en maiúsculas, incluíndo as vogais con til.
   O (+) establece que debe aparecer polo menos unha vez. E finalmente, o ($) indica que a busca se realizará ata o final da cadea. */
 }
